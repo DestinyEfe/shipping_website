@@ -1,5 +1,5 @@
 from random import randint
-import secrets, string
+
 
 from django.db import models
 from django.contrib.auth.models import User
@@ -9,11 +9,7 @@ import barcode
 from barcode.writer import ImageWriter
 from io import BytesIO
 
-COUNTRY_CHOICES = [
-    ('MR', 'Mr.'),
-    ('MRS', 'Mrs.'),
-    ('MS', 'Ms.'),
-]
+
 
 # Create your models here.
 class Sender(models.Model):
@@ -75,10 +71,7 @@ class Package(models.Model):
     def __str__(self):
         return self.package_name
 
-    # def random_string(self):
-    #     num = 10
-    #     res = ''.join(secrets.choice(string.ascii_letters + string.digits) for x in range(num))
-    #     return res +""+ '.png'
+    
 
     def save(self, *args, **kwargs):
         EAN = barcode.get_barcode_class('code128')
@@ -93,4 +86,3 @@ class Package(models.Model):
 #I used CharField instead of the BigIntegerField 
 # because of the DESTI am appending at the front.
 
-#Sender.packages_set.all()
