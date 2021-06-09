@@ -18,7 +18,8 @@ body{
     background-color: aqua;
     background-blend-mode: darken;
     opacity: 0.8;
-    padding: 1em;    
+    padding: 1em;
+    clip-path: polygon(0 0, 100% 0, 100% 79%, 0% 100%);
 }
 
 nav .nav-item{
