@@ -1,0 +1,28 @@
+body {
+    position: static;
+    top: 0px !important; 
+}
+
+.goog-logo-link {
+    display:none !important;
+} 
+
+.goog-te-gadget {
+    color: transparent !important;
+}
+
+.goog-te-banner-frame.skiptranslate {
+    display: none !important;
+} 
+
+div.google_translate_element{
+    margin: 100px 100px;
+}
+.translate_box{
+    width: 200px;
+    padding: 20px;
+    margin: 50px 0px 0px 0px;
+}
+.goog-te-combo{
+    background: #ff00ff;
+}
