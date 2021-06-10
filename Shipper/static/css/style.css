@@ -6,11 +6,14 @@
     background-color: rgb(245, 250, 253);
 }
 
+.active{
+    color: rgb(241, 13, 13) !important;
+    font-weight: bold !important
+}
+
 body{
     overflow-x: hidden !important;
 }
-
-
 
 .banner-image{
     background-image: url('/static/img/bg.jpg');

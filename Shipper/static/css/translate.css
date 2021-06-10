@@ -23,3 +23,8 @@ div.google_translate_element{
     padding: 20px;
     margin: 50px 0px 0px 0px;
 }
+
+.active{
+    color: rgb(241, 13, 13) !important;
+    font-weight: bold !important
+}

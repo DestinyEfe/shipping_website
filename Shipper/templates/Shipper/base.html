@@ -29,46 +29,50 @@
             <!-- Translator button goes here -->
                 <div id="google_translate_element" 
                     class='ml-2 mt-3 pt-2 translate_box'
-                    style="position:fixed;top:-30px;right:8%;z-index:999999;">
+                    style="position:fixed;top:-29px;right:8%;z-index:999999;">
                 </div>
             <!-- /Translator button ends here -->
             <div class="collapse navbar-collapse" id="navbarNav">
                 <d class="mx-auto"></d>
+                {% with request.resolver_match.url_name as url_name %}
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a href="" class="nav-link text-white ">HOME</a>
+                        <a href="{% url 'index' %}" 
+                            class="nav-link text-white {% if url_name == 'index' %}active{% endif %}">HOME</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a href="" class="nav-link text-white ">ABOUT US</a>
+                        <a href="{% url 'about' %}" 
+                           class="nav-link text-white {% if url_name == 'about' %}active{% endif %}">ABOUT US</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a href="" class="nav-link text-white ">OUR SERVICES</a>
+                        <a href="" class="nav-link text-white {% if url_name == 'services' %}active{% endif %}">OUR SERVICES</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a href="" class="nav-link text-white ">GENERAL TERMS</a>
+                        <a href="" class="nav-link text-white {% if url_name == 'terms' %}active{% endif %}">GENERAL TERMS</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a href="" class="nav-link text-white ">TRACK & TRACE</a>
+                        <a href="" class="nav-link text-white {% if url_name == 'track' %}active{% endif %}">TRACK & TRACE</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a href="" class="nav-link text-white ">GET FREE QUOTE</a>
+                        <a href="" class="nav-link text-white {% if url_name == 'quote' %}active{% endif %}">GET FREE QUOTE</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a href="" class="nav-link text-white ">CONTACT US</a>
+                        <a href="" class="nav-link text-white {% if url_name == 'contact' %}active{% endif %}">CONTACT US</a>
                     </li>
                 </ul>
+                {% endwith %}
             </div>
         </div>
     </nav>
@@ -107,6 +111,7 @@
      </script>
     <script src="static/js/f.txt"></script>
     <script src="/static/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="/static/js/index.js"></script>
 </body>
 </html>
