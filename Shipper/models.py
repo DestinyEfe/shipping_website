@@ -1,6 +1,5 @@
 from random import randint
 
-
 from django.db import models
 from django.contrib.auth.models import User
 from django.core.files import File
@@ -43,6 +42,7 @@ class Package(models.Model):
     sender = models.ForeignKey(Sender, on_delete=models.CASCADE)
     reciever = models.ForeignKey(Receiver, on_delete=models.RESTRICT)
     packageId = models.IntegerField(default=randint(1111, 9999))
+    amount = models.IntegerField(default=1)
     package_name = models.CharField(max_length=500)
     length = models.IntegerField(default=0)
     width = models.IntegerField(default=0)
@@ -66,12 +66,10 @@ class Package(models.Model):
     piece_type = models.CharField(max_length=50, default='')
     description = models.CharField(max_length=50, default='')
     total_volume_weight = models.DecimalField(max_digits=20, decimal_places=2, default=0)
-    toal_actual_weight = models.DecimalField(max_digits=20, decimal_places=2, default=0)
+    total_actual_weight = models.DecimalField(max_digits=20, decimal_places=2, default=0)
 
     def __str__(self):
         return self.package_name
-
-    
 
     def save(self, *args, **kwargs):
         EAN = barcode.get_barcode_class('code128')
@@ -81,8 +79,4 @@ class Package(models.Model):
         self.barcode.save('barcode.png', File(buffer), save=False)
         return super().save(*args, **kwargs)
 
-
-#for Package.tracking_code in line 44
-#I used CharField instead of the BigIntegerField 
-# because of the DESTI am appending at the front.
 

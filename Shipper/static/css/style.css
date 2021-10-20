@@ -6,10 +6,25 @@
     background-color: rgb(245, 250, 253);
 }
 
-.active{
-    color: rgb(241, 13, 13) !important;
-    font-weight: bold !important
+.br-white{
+    border-right: 1px solid white;
 }
+.other-header{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-image: url('/static/img/download4.png');
+    background-size: cover;
+    background-color: purple;
+    background-blend-mode:difference;
+    min-width: 100vw;
+    margin-top: -3px;
+}
+.mt-7{
+    margin-top: 1rem !important;
+}
+
+
 
 body{
     overflow-x: hidden !important;
@@ -79,6 +94,8 @@ p-50{
     justify-items: center
     
 }
+
+
 
 .flex div{
     padding: 5px;

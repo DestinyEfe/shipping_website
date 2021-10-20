@@ -9,8 +9,18 @@
 //     }
 // });
 
-// $(function () { $('.navbar-nav li:eq(2)').addClass('active'); });
 
+$(document).ready(function(){
+    $('#form').on('submit', function(e){
+        
+
+        var x = $('#tracking_code').val();
+
+       
+
+        console.log(x)
+    })
+});
 
 
 
